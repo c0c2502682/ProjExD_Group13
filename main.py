@@ -1,6 +1,8 @@
 """ポケモン風の簡単なターン制バトルゲーム。"""
 
 import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 import random
 import sys
 
@@ -193,9 +195,9 @@ def enemy_action(player, is_protecting):
 
     if is_protecting:
         damage = damage // 2
-        message = f"敵の{enemy_move}！\nまもりで半分にした！\n{damage} ダメージ受けた。"
+        message = f"敵の{enemy_move}!\nまもりで半分にした!\n{damage} ダメージ受けた。"
     else:
-        message = f"敵の{enemy_move}！\n{damage} ダメージ受けた。"
+        message = f"敵の{enemy_move}!\n{damage} ダメージ受けた。"
 
     player.take_damage(damage)
     is_protecting = False
